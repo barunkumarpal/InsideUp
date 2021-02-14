@@ -1,0 +1,182 @@
+.main-nav{
+   position: fixed !important; 
+   z-index: 1999;
+   top: 0%;
+   left: 0;
+   background: none;
+   width: 100%;
+   transition: ease-out 0.5s;
+
+   &.fixed{
+      top: -100%;
+      animation-name: navfixed;   
+      animation-duration: 1s;
+      animation-fill-mode: forwards;     
+      background: rgba(3, 3, 3, 0.541);
+
+      .navbar-brand{
+         img{
+            width: 50px;            
+         }
+      }    
+   } // fixed end
+
+   // navbar logo
+   .navbar-brand{
+      img{
+         width: 100px;  
+         @include x-small{
+            width: 50px;
+          }          
+      }
+   }
+
+   // menu bar
+   i.fas.fa-bars{
+      color: #fff;
+      font-size: 40px;
+      display: none;
+
+      &:hover{
+         cursor: pointer !important;
+      }
+
+      @include x-small{
+         display: block;
+      }
+      @include small{
+         display: block;
+      }
+   }
+
+   // nav ul
+   ul.navbar-nav{
+      
+      @include x-small{        
+        position: fixed;
+        right: -100%;
+        top: 0%;
+        background: rgba(0, 0, 0, 0.822);
+        width: 100%;
+        transition: 0.5s;
+        text-align: center;
+        padding-bottom: 30px;
+       } 
+
+       @include small{
+         position: fixed;
+         right: -100%;
+         top: 0%;
+         background: rgba(0, 0, 0, 0.822);
+         width: 100%;
+         transition: 0.5s;
+         text-align: center;
+         padding-bottom: 30px;
+       }
+
+       &.right-zero{
+         @include x-small{
+            right: 0% !important;
+         }         
+         @include small{
+            right: 0% !important;
+         }         
+      }
+
+      // Mobile menu close
+      .menu-close{
+         font-size: 45px;
+         color: red;
+         margin-right: 20px;
+         margin-top: 20px;
+         display: none;
+
+         @include x-small{
+            display: block;
+         }
+         @include small{
+            display: block;
+         }
+      }
+
+
+      .nav-item{
+         ul{
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            justify-content: center;
+         }
+
+         &.search-item{
+            margin-left: 30px;
+      
+            @include x-small{
+               margin-left: 0px;
+               margin-right: 30px;
+            }
+            @include small{
+               margin-left: 0px;
+               margin-right: 30px;
+            }
+         }
+
+
+         .nav-link{
+            color: #fff;
+            transition: 0.3s;
+            position: relative;
+      
+            &:hover, &.active{
+               color: $nav-hover-color;
+      
+               &:before{
+                  width: 85%;
+      
+                  @include x-small{
+                     width: 20%;
+                  } 
+                  @include small{
+                     width: 10%;
+                  } 
+               }
+            }     
+      
+            &.underline{
+               position: relative;
+      
+               &:before{
+                  position: absolute;
+                  content: '';
+                  width: 85%;
+                  left: 50%;
+                  transform: translate(-50%);
+                  height: 1px;
+                  bottom: 0;            
+                  background: #fff;
+      
+                  @include x-small{
+                     width: 85%;
+                  } 
+               }
+            }
+      
+            &:before{
+               position: absolute;
+               content: '';
+               width: 0%;
+               height: 1px;
+               background: $nav-hover-color;
+               transition: ease-out 0.3s;
+               bottom: 0;
+               left: 50%;
+               transform: translate(-50%);        
+            }
+         } // Nav link end
+      } // Nav item end 
+
+     
+
+
+   }  
+}

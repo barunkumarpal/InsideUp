@@ -1,0 +1,82 @@
+@import 'font-face';
+@import 'variables';
+@import 'responsive';
+@import 'slider';
+@import 'main-nav';
+@import 'animate';
+@import 'front-page';
+
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  // height: 200vh;
+}
+
+p{
+  font-family: $popins-regular;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.secondary-color{
+  color: $secondary-color;
+}
+.t-upper{
+  text-transform: uppercase;
+}
+.font-bold{
+  font-weight: bold;
+  font-family: $popins-bold;
+}
+
+.up-title.line-behind{
+  color: $secondary-color;
+  margin-bottom: 0px;
+  position: relative; 
+  padding-left: 45px;       
+
+  &:before{
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: #8b8b8b;
+      left: 0;
+      bottom: 50%;
+  
+  }
+}
+
+.link{
+  font-size: 12px;
+}
+
+.line-after{
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 80%;
+    background: rgb(97, 97, 97);
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.line-right{
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: #bbbbbb;
+    right: 55%;
+    bottom: 50%;
+  }
+}
